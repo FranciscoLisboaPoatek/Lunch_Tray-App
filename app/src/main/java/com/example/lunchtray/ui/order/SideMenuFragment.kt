@@ -75,7 +75,7 @@ class SideMenuFragment : Fragment() {
      */
     fun cancelOrder() {
         sharedViewModel.resetOrder()
-        findNavController().navigate(R.id.action_sideMenuFragment_to_startOrderFragment)
+        findNavController().popBackStack(R.id.startOrderFragment, false)
     }
 
     /**

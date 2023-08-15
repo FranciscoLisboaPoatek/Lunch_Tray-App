@@ -56,6 +56,7 @@ class NavigationTests : BaseTest() {
         onView(withId(R.id.start_order_btn)).perform(click())
         // Check destination is correct
         assertEquals(navController.currentDestination?.id, R.id.entreeMenuFragment)
+        startOrderScenario.close()
     }
 
     /**
@@ -81,6 +82,7 @@ class NavigationTests : BaseTest() {
         onView(withId(R.id.cancel_button)).perform(click())
         // Check that the destination is correct
         assertEquals(navController.currentDestination?.id, R.id.startOrderFragment)
+        entreeMenuScenario.close()
     }
 
     /**
@@ -106,6 +108,7 @@ class NavigationTests : BaseTest() {
         onView(withId(R.id.next_button)).perform(click())
         // Check that the destination is correct
         assertEquals(navController.currentDestination?.id, R.id.sideMenuFragment)
+        entreeMenuScenario.close()
     }
 
     /**
@@ -124,6 +127,7 @@ class NavigationTests : BaseTest() {
         }
         onView(withId(R.id.cancel_button)).perform(click())
         assertEquals(navController.currentDestination?.id, R.id.startOrderFragment)
+        sideMenuScenario.close()
     }
 
     /**
@@ -142,6 +146,7 @@ class NavigationTests : BaseTest() {
         }
         onView(withId(R.id.next_button)).perform(click())
         assertEquals(navController.currentDestination?.id, R.id.accompanimentMenuFragment)
+        sideMenuScenario.close()
     }
 
     /**
@@ -161,6 +166,7 @@ class NavigationTests : BaseTest() {
         }
         onView(withId(R.id.cancel_button)).perform(click())
         assertEquals(navController.currentDestination?.id, R.id.startOrderFragment)
+        accompanimentMenuScenario.close()
     }
 
     /**
@@ -180,6 +186,7 @@ class NavigationTests : BaseTest() {
         }
         onView(withId(R.id.next_button)).perform(click())
         assertEquals(navController.currentDestination?.id, R.id.checkoutFragment)
+        accompanimentMenuScenario.close()
     }
 
     /**
@@ -198,6 +205,7 @@ class NavigationTests : BaseTest() {
         }
         onView(withId(R.id.cancel_button)).perform(click())
         assertEquals(navController.currentDestination?.id, R.id.startOrderFragment)
+        checkoutScenario.close()
     }
 
     /**
@@ -216,5 +224,6 @@ class NavigationTests : BaseTest() {
         }
         onView(withId(R.id.submit_button)).perform(click())
         assertEquals(navController.currentDestination?.id, R.id.startOrderFragment)
+        checkoutScenario.close()
     }
 }

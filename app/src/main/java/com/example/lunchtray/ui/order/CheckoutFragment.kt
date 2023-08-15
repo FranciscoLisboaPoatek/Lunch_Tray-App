@@ -76,7 +76,7 @@ class CheckoutFragment : Fragment() {
      */
     fun cancelOrder() {
         sharedViewModel.resetOrder()
-        findNavController().navigate(R.id.action_checkoutFragment_to_startOrderFragment)
+        findNavController().popBackStack(R.id.startOrderFragment, false)
     }
 
     /**
@@ -86,7 +86,7 @@ class CheckoutFragment : Fragment() {
         // Show snackbar to "confirm" order
         Snackbar.make(binding.root, R.string.submit_order, Snackbar.LENGTH_SHORT).show()
         sharedViewModel.resetOrder()
-        findNavController().navigate(R.id.action_checkoutFragment_to_startOrderFragment)
+        findNavController().popBackStack(R.id.startOrderFragment, false)
     }
 
     /**
